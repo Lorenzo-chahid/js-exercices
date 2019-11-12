@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    
+     document.getElementById("run").addEventListener("click", async () =>{
+        try {
+            const request   = await fetch("http://localhost:3000/heroes");
+            const xmen = await request.json();
+            console.log(xmen);
+        }catch (error){
+            console.error(error); 
+        }
+    })
+
 })();
